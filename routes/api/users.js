@@ -4,9 +4,12 @@ const gravatar = require('gravatar');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const config = require('config');
+const cors = require('cors');
 const { check, validationResult } = require('express-validator');
 
 const User = require('../../models/User');
+
+router.all('*', cors());
 
 // @route   POST api/users
 // @desc    Register user
